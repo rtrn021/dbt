@@ -1,5 +1,0 @@
---select
---    count(*) as total_amount
---from {{ ref('stg_orders' )}}
---
---

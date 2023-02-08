@@ -1,4 +1,6 @@
 {% test is_even(model, column_name) %}
+--{{ config(severity = 'error') }}
+--{{ config(severity = 'warn') }}
 
 with validation as (
 

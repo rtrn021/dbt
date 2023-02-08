@@ -2,6 +2,13 @@ version: 2
 
 models:
   - name: stg_customers
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - first_name
+            - last_name
+      - test_count
     columns:
       - name: customer_id
         tests:
@@ -11,9 +18,10 @@ models:
       - name: first_name
         tests:
 #          - unique
+#              config:
+#                severity: warn
           - not_null
-    tests:
-      - test_count
+
 
 
   - name: stg_orders
